@@ -16,7 +16,7 @@ local MainTab2 = MainWindow:MakeTab({
 local MainStuff2 = MainTab2:AddSection({
 	Name = "Anti Cheat"
 })
-
+wait()
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
 	Text = "Must Be Police For This To Work, ALSO PLEASE BYPASS ANTI CHEAT YOU WON'T BE ABLE TO USE IT WITHOUT BYPASS, DO NOT PRESS IF YOU ALREADY BYPASSED",
 	Color = Color3.fromRGB(207, 96, 36)
