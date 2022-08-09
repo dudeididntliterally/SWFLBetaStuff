@@ -1,14 +1,24 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/kav"))()
-local Window = Library.CreateLib("Police Gun Mods (SWFL)", "DarkTheme")
-local HomeWindow = Window:NewTab("Home")
-local Home = HomeWindow:NewSection("Home")
-local OtherModsWindow = Window:NewTab("Other Mods")
-local OtherMods = OtherModsWindow:NewSection("Gun Mods #2")
-local AntiCheat = Window:NewTab("Anti Cheat")
-local ac = AntiCheat:NewSection("Anti Cheat Main")
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local MainWindow = OrionLib:MakeWindow({Name = "Southwest Florida Gun Mods Police", HidePremium = false, SaveConfig = true, ConfigFolder = "SWFLBetaPolice.lua"})
+local MainTab = MainWindow:MakeTab({
+	Name = "Gun Mods Police",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local MainStuff = MainTab:AddSection({
+	Name = "Gun Mods"
+})
+local MainTab2 = MainWindow:MakeTab({
+	Name = "Anti Cheat",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local MainStuff2 = MainTab2:AddSection({
+	Name = "Anti Cheat"
+})
 
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "Must Be Police For This To Work, ALSO PLEASE BYPASS ANTI CHEAT YOU WON'T BE ABLE TO USE IT WITHOUT BYPASS",
+	Text = "Must Be Police For This To Work, ALSO PLEASE BYPASS ANTI CHEAT YOU WON'T BE ABLE TO USE IT WITHOUT BYPASS, DO NOT PRESS IF YOU ALREADY BYPASSED",
 	Color = Color3.fromRGB(207, 96, 36)
 })
 wait()
@@ -17,48 +27,66 @@ game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
 	Color = Color3.fromRGB(207, 96, 36)
 })
 wait()
-ac:NewButton("Click Me To Bypass Anti Cheat", "Anti Cheat", function()
+MainTab2:AddButton({
+Name = "Anti Cheat Bypass (GUN MODS)",
+Callback = function()
 game.ReplicatedStorage.Remotes.SecureSettings:Destroy()
-end)
-wait()
-Home:NewButton("Mod FireRate", "Home", function()
+end})
+
+MainTab:AddButton({
+Name = "Mod FireRate",
+Callback = function()
 local m = require(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("G17").Setting)
     m.FireRate = 0.01
-end)
+end})
 
-Home:NewButton("Mod Ammo", "Home", function()
+MainTab:AddButton({
+Name = "Mod Ammo",
+Callback = function()
 local m = require(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("G17").Setting)
     m.Ammo = 999999
     m.LimitedAmmoEnabled = false
-end)
+end})
 
-Home:NewButton("Mod Reload Time", "Home", function()
+MainTab:AddButton({
+Name = "Mod Reload Time",
+Callback = function()
 local m = require(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("G17").Setting)
     m.ReloadTime = 0.01
-end)
+end})
 
-Home:NewButton("Mod Extra Ammo", "Home", function()
+MainTab:AddButton({
+Name = "Mod Extra Ammo",
+Callback = function()
 local m = require(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("G17").Setting)
     m.AmmoPerMag = 999999
     m.LimitedAmmoEnabled = false
-end)
+end})
 
-Home:NewButton("Mod Spread", "Home", function()
+MainTab:AddButton({
+Name = "Mod Spread",
+Callback = function()
 local m = require(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("G17").Setting)
     m.Spread = 0.01
-end)
+end})
 
-Home:NewButton("Mod Range", "Home", function()
+MainTab:AddButton({
+Name = "Mod Range",
+Callback = function()
 local m = require(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("G17").Setting)
     m.Range = 9000000
-end)
+end})
 
-OtherMods:NewButton("Mod Recoil", "Other Mods", function()
+MainTab:AddButton({
+Name = "Mod Recoil",
+Callback = function()
 local m = require(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("G17").Setting)
     m.Recoil = 0.01
-end)
+end})
 
-OtherMods:NewButton("Fully Auto", "Other Mods", function()
+MainTab:AddButton({
+Name = "Fully Auto",
+Callback = function()
 local m = require(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("G17").Setting)
     m.Auto = true
-end)
+end})
