@@ -90,3 +90,9 @@ Callback = function()
 local m = require(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("G17").Setting)
     m.Auto = true
 end})
+
+BackToGamePicker:AddButton({
+Name = "Go Back To Game Picker",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dudeididntliterally/GamePickerMain/main/GamePicker.lua"))()
+end})
