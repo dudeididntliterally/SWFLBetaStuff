@@ -16,6 +16,14 @@ local MainTab2 = MainWindow:MakeTab({
 local MainStuff2 = MainTab2:AddSection({
 	Name = "Anti Cheat"
 })
+local BackToGamePicker = MainWindow:MakeTab({
+	Name = "Go Back",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local GamePicker = BackToGamePicker:AddSection({
+	Name = "Go Back"
+})
 wait()
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
 	Text = "Must Be Criminal For This To Work, ALSO PLEASE BYPASS ANTI CHEAT YOU WON'T BE ABLE TO USE IT WITHOUT BYPASS, DO NOT PRESS IF YOU ALREADY BYPASSED",
@@ -89,4 +97,10 @@ Name = "Fully Auto",
 Callback = function()
 local m = require(game:GetService("Players").LocalPlayer.Backpack.M9.Setting)
     m.Auto = true
+end})
+
+BackToGamePicker:AddButton({
+Name = "Go Back To Game Picker",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dudeididntliterally/GamePickerMain/main/GamePicker.lua"))()
 end})
