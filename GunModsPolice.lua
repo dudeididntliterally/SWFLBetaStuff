@@ -16,6 +16,14 @@ local MainTab2 = MainWindow:MakeTab({
 local MainStuff2 = MainTab2:AddSection({
 	Name = "Anti Cheat"
 })
+local BackToGamePicker = MainWindow:MakeTab({
+	Name = "Go Back",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local GamePicker = BackToGamePicker:AddSection({
+	Name = "Go Back"
+})
 wait()
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
 	Text = "Must Be Police For This To Work, ALSO PLEASE BYPASS ANTI CHEAT YOU WON'T BE ABLE TO USE IT WITHOUT BYPASS, DO NOT PRESS IF YOU ALREADY BYPASSED",
